@@ -1,0 +1,3 @@
+The is the output to the file
+Open function is a system call. it is followed by the write system call.Hi there this was to test the error handling
+Triya is a good and loving sisterHey there friends
