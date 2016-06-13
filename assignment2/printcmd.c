@@ -1,0 +1,39 @@
+
+//This is a small user program to take input from the user and print the output to the screen.
+//The user can access this program using the shell command printcmd
+//This program has been introduced in the Makefile
+
+
+#include "types.h"
+#include "user.h"
+#include "stat.h"
+
+
+int main(int i,char *t[])
+{
+  char m[100];
+  printf(1,"Enter any string\n");
+  gets(m,100);
+  
+  uint k = strlen(m);
+
+  printf(1, "%s has %d characters", m,k);
+  exit();
+  
+}
+  
+  
+//The following commands are used by the OS(shell command make) to compile the codes for the user programs hello and printcmd in Xv6.
+//The object files, .s files, .asm files are created and saved in the Xv6 directory
+
+ /* gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -fvar-tracking -fvar-tracking-assignments -O0 -g -Wall -MD -gdwarf-2 -m32 -Werror -fno-omit-frame-pointer -fno-stack-protector   -c -o hello.o hello.c
+ld -m    elf_i386 -N -e main -Ttext 0 -o _hello hello.o ulib.o usys.o printf.o umalloc.o
+objdump -S _hello > hello.asm
+objdump -t _hello | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > hello.sym
+
+gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -fvar-tracking -fvar-tracking-assignments -O0 -g -Wall -MD -gdwarf-2 -m32 -Werror -fno-omit-frame-pointer -fno-stack-protector   -c -o printcmd.o printcmd.c
+ld -m    elf_i386 -N -e main -Ttext 0 -o _printcmd printcmd.o ulib.o usys.o printf.o umalloc.o
+objdump -S _printcmd > printcmd.asm
+objdump -t _printcmd | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > printcmd.sym
+
+*/
